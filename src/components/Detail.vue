@@ -224,10 +224,6 @@ export default {
                 this.pokemon = response.data;
                 this.pokemonImage = response.data.sprites.front_default
                 this.show = true;
-                console.log(this.pokemon)
-                console.log(this.pokemon.name)
-                console.log(this.pokemonImage)
-                console.log(this.pokemonUrl)
             })
             .catch(err => {
             console.log(err);

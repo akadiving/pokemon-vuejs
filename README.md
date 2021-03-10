@@ -2,7 +2,7 @@
 
 ## About
 
-Simple pokemon searching app, utiizing pokemon AIP (<https://pokeapi.co/>)
+Simple pokemon searching app, utilizing pokemon API (<https://pokeapi.co/>)
 
 ## Project setup
 

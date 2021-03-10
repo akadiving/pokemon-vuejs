@@ -2,7 +2,7 @@
   <div class="home"
     :class="{ 'dark-mode': darkMode}"
   >
-    <div class="search-bar" v-bind:class="{homeblur: showDetail}">
+    <div class="search-bar" id='bar' v-bind:class="{homeblur: showDetail}">
       <v-container >
         <v-row class="justify-center" no-gutters style="padding-bottom: 0px;">
           <v-col cols="3"
@@ -34,7 +34,13 @@
         </v-row>
       </v-container>
     </div>
-    
+    <v-row justify="end">
+      <v-fab-transition>
+        <v-btn fab class="ma-0 pa-0" color="#273C43" @click="scrollUp()">
+          <v-icon color="white">mdi-chevron-up</v-icon>
+        </v-btn>
+      </v-fab-transition>
+    </v-row>
     <div class="detail" v-if="showDetail" >
       <Detail
       :pokemonDetail="pokemonDetail"
@@ -51,7 +57,6 @@
       @setPokemonUrl='setPokemonUrl'
     />
     </div>
-    
   </div>
 </template>
 
@@ -91,12 +96,29 @@ export default {
       this.pokemonDetail = '';
       this.showDetail = false
     },
+    scrollUp(){
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    },
+    mounted(){
+      this.scrollUp();
+    }
   }
 }
 </script>
 <style scoped>
 .home{
   background-color: #EEEEC8;
+}
+
+.v-btn{
+  top: 91vh;
+  right: 1vw;
+  position: fixed;
+  z-index: 1;
 }
 
 .search-bar {

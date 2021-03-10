@@ -32,7 +32,7 @@
           </v-card-title>
         </v-card>
       </v-col>
-
+    
       <v-col
       cols="12"
       xl="2"
@@ -80,7 +80,6 @@
         pokemons: [],
         pokemonUrl: [],
         currentUrl: '',
-        
       }
     },
 
@@ -99,6 +98,8 @@
         this.fetchData();
       },
       
+      
+      
       fetchData(){
         axios.get(this.currentUrl)
         .then(response => {  
@@ -108,8 +109,7 @@
           }
           this.currentUrl = response.data.next
           this.load = false;
-          console.log(this.pokemons)
-          console.log(this.pokemonUrl)
+          
         })
         .catch(err => {
           console.log(err);
